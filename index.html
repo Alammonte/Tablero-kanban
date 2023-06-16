@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- cambie el "en" por el "es" osea cambie a español -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Kanban</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <!--link:css conecto el css con el html  -->
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="kanban-head">
+            <!--con ".kanban-head" : cree rapidamente un div con la clase kanban-head -->
+
+            <strong class="kanban-head-title"> Kanban UI
+                <!-- "strong.kanban-head-title" con el strong. creamos una etiqueta strong con la clase del nombre que pongamos despues del punto -->
+                <!-- el elemento strong significa marcar con especial "enfasis" las partes importantes de un texto -->
+
+            </strong>
+        </div>
+
+        <div class="kanban-table">
+
+            <div class="kanban-block kanban-form">
+                <!-- .kanban-block.kanban-form : en este caso este div con clase tiene dos nombres para eso ponemos otro punto y se separan los nombres por si solos.
+                 -->
+                <strong class="kanban-form-title">Tarea</strong>
+
+                <div class="conteiner-inputs">
+                    <strong class="strong-input">Nombre Tarea: </strong>
+
+                    <input type="text" id="tarea nombre" class="input-text">
+                    <!--input.input-text : cree un input facilmente con la clase input-text. 
+                            id="tarea nombre" : le agrege un id manualmente
+                        EL INPUT ES UN ELEMENTO QUE SE USA PARA INTERACTUAR CON EL USARIO A TRAVEZ DE UNA ENTRADA O CAMPO QUE RECOPILA LOS DATOS DE TODO TIPO QUE INGRESA EL USUARIO -->
+                    <!-- "input" solo proporciona la interfaz para que los usuarios ingresen datos, pero para enviar y procesar esos datos, generalmente se requiere el uso de un formulario o algún lenguaje de programación en el lado del servidor. -->
+
+                    <div class="conteiner-inputs">
+                        <strong class="strong-input">Descripción Tarea: </strong>
+                        <textarea type="text" id="tarea descripcion" class="textarea-text" rows="4"></textarea>
+
+                        <div class="conteiner-inputs">
+                            <strong class="strong-input">Responsable Tarea: </strong>
+                            <input type="text" id="tarea responsable" class="input-text">
+                        </div>
+
+                    <input type="text" class="btn-crear-editar" type="submit" id="btn-crear-editar" value="Crear Tarea" onclick="crearTarea(event)" >
+
+                    </div>
+
+                    <div class="kanban-block" id="pendientes" ondrop="drop(event)" ondrag="drop(event)" ondragover="allowDrop(event)">
+                    <!--ARRASTRES
+                         ondrag: se activa cuando se inicia el arrastre de un elemento, manteniendo apretado el click
+                        ondrop:se activa cuando sueltas un elemento que esta siendo arrastrado en un lugar valido este hara acciones especificas en ese momento 
+                        ondragover: se activa cuando pasamos con el elemento arrastrado sobre un area de la pagina habilitada, es como una reacción que tiene al pasar por su destino
+                    -->
+
+                     <strong>PENDIENTES </strong>
+
+                    </div>
+
+                    <div class="kanban-block" id="procesos" ondrop="drop(event)" ondrag="drop(event)" ondragover="allowDrop(event)">
+                        
+                     <strong>EN PROCESO </strong>
+    
+                    </div>
+
+                    <div class="kanban-block" id="completados" ondrop="drop(event)" ondrag="drop(event)" ondragover="allowDrop(event)">
+                        
+                        <strong>COMPLETADOS </strong>
+       
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script src="script.js"></script>
+            <!-- script:src conecto el js con el thml -->
+</body>
+
+</html>
